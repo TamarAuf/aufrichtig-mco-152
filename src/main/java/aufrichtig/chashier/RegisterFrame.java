@@ -25,7 +25,7 @@ public class RegisterFrame extends JFrame {
     private JLabel priceTextLabel;
     private JLabel priceLabel;
     private JLabel amountTextLabel;
-    private JLabel amountLabel;
+    private JTextField amountLabel;
     private JButton clearButton;
     private JButton payButton;
 
@@ -38,18 +38,8 @@ public class RegisterFrame extends JFrame {
     private JPanel middlePanel;
     private JPanel bottomPanel;
 
-    private double dec;
-    private int num;
-    private double price;
-    private int regTwents;
-    private int regTens;
-    private int regFives;
-    private int regOnes;
-    private int regQuarts;
-    private int regDimes;
-    private int regNicks;
-    private int regPenns;
-
+    private JLabel errors;
+    
     private int newTwent;
     private int newTen;
     private int newFive;
@@ -59,33 +49,19 @@ public class RegisterFrame extends JFrame {
     private int newNick;
     private int newPenn;
 
+    private int num;
+    private double price;
+
     private double amountPaid = 0;
 
     public RegisterFrame() throws NotEnoughChangeException {
+
+        Cashier cashier = new Cashier();
+
         Random rand = new Random();
 
         num = rand.nextInt(10000);
         price = num / 100;
-
-        regTwents = rand.nextInt(100);
-        regTens = rand.nextInt(100);
-        regFives = rand.nextInt(100);
-        regOnes = rand.nextInt(100);
-        regQuarts = rand.nextInt(100);
-        regDimes = rand.nextInt(100);
-        regNicks = rand.nextInt(100);
-        regPenns = rand.nextInt(100);
-
-        Cash register = new Cash();
-
-        register.setTwentyDollar(regTwents);
-        register.setTenDollar(regTens);
-        register.setFiveDollar(regFives);
-        register.setDollar(regOnes);
-        register.setQuarter(regQuarts);
-        register.setDime(regDimes);
-        register.setNickel(regNicks);
-        register.setPenny(regPenns);
 
         setSize(1000, 200);
         setTitle("Register");
@@ -103,9 +79,9 @@ public class RegisterFrame extends JFrame {
         pennyButton = new JButton("Penny");
 
         priceTextLabel = new JLabel("Price:");
-        priceLabel = new JLabel();
+        priceLabel = new JLabel(String.valueOf(price));
         amountTextLabel = new JLabel("Amount:");
-        amountLabel = new JLabel(String.valueOf(amountPaid));
+        amountLabel = new JTextField(String.valueOf(amountPaid));
         clearButton = new JButton("Clear");
         payButton = new JButton("Pay");
 
@@ -199,7 +175,7 @@ public class RegisterFrame extends JFrame {
             custCash.setNickel(0);
             custCash.setPenny(0);
         });
-        Cashier cashier = new Cashier();
+
         payButton.addActionListener(actionEvent -> {
             try {
                 cashier.pay(price, custCash);

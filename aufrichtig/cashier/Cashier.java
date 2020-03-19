@@ -2,6 +2,8 @@ package aufrichtig.cashier;
 
 import aufrichtig.chashier.RegisterFrame;
 
+import java.util.Random;
+
 /**
  * @author Tamar Aufrichtig
  */
@@ -10,11 +12,8 @@ public class Cashier {
     public Cashier() throws NotEnoughChangeException {
     }
 
-    Cash register = new Cash();
-
     private double originalPrice;
     private double moneySpent;
-
 
     private int twentsLeft;
     private int tensLeft;
@@ -43,16 +42,27 @@ public class Cashier {
     private int nicksAvail;
     private int pennsAvail;
 
+    private int regTwents;
+    private int regTens;
+    private int regFives;
+    private int regOnes;
+    private int regQuarts;
+    private int regDimes;
+    private int regNicks;
+    private int regPenns;
+
+    String error;
+
     private double change = 0.0;
     private double regAmount;
 
     public double getChange() {
         return change;
     }
+
     public double getRegAmount() {
         return regAmount;
     }
-
 
 
     public Cash pay(double price, Cash custCash) throws NotEnoughChangeException {
@@ -68,7 +78,7 @@ public class Cashier {
         pennsLeft = custCash.getPenny();
 
         int count = 0;
-        while (price >= .01 || count > 2) {
+        while (price >= .01 || count == 2) {
             count += 1;
             while ((price >= 20 || count > 1) && twentsLeft > 0) {
                 price -= 20;
@@ -118,8 +128,33 @@ public class Cashier {
                 moneySpent += .01;
             }
         }
+        if(moneySpent < originalPrice){
+            error = "Need more money";
+        }
+        else{
+        change = moneySpent - originalPrice;}
 
-        change = moneySpent - originalPrice;
+        Random rand = new Random();
+
+        regTwents = rand.nextInt(100);
+        regTens = rand.nextInt(100);
+        regFives = rand.nextInt(100);
+        regOnes = rand.nextInt(100);
+        regQuarts = rand.nextInt(100);
+        regDimes = rand.nextInt(100);
+        regNicks = rand.nextInt(100);
+        regPenns = rand.nextInt(100);
+
+        Cash register = new Cash();
+
+        register.setTwentyDollar(regTwents);
+        register.setTenDollar(regTens);
+        register.setFiveDollar(regFives);
+        register.setDollar(regOnes);
+        register.setQuarter(regQuarts);
+        register.setDime(regDimes);
+        register.setNickel(regNicks);
+        register.setPenny(regPenns);
 
         twentsAvail = register.getTwentyDollar();
         tensAvail = register.getTenDollar();
@@ -187,10 +222,11 @@ public class Cashier {
             pennsChange += 1;
         }
 
-        if (change >= .01) {
-            System.out.println("booga");
-        } else {
-            try {
+        try {
+            if (change >= .01) {
+                System.out.println("Not Enough Change");
+                ;
+            } else {
                 register.setTwentyDollar(twentsAvail - twentsChange);
                 register.setTenDollar(tensAvail - tensChange);
                 register.setFiveDollar(fivesAvail - fivesChange);
@@ -199,9 +235,9 @@ public class Cashier {
                 register.setDime(dimesAvail - dimesChange);
                 register.setNickel(nicksAvail - nicksChange);
                 register.setPenny(pennsAvail - pennsChange);
-            } catch (Exception NotEnoughChangeException) {
-                NotEnoughChangeException.printStackTrace();
             }
+        } catch (Exception NotEnoughChangeException) {
+            NotEnoughChangeException.printStackTrace();
         }
 
         twentsAvail = register.getTwentyDollar();
@@ -234,5 +270,28 @@ public class Cashier {
         changeCash.setPenny(pennsChange);
 
         return changeCash;
+    }
+
+    public static void main(String[] args) throws NotEnoughChangeException {
+
+        Cash custCash = new Cash();
+        custCash.setDollar(1);
+        custCash.setQuarter(1);
+
+        Cashier cashier = new Cashier();
+
+        Cash change = new Cash();
+        //when
+        change = cashier.pay(1.10, custCash);
+
+        System.out.println(custCash.getDime());
+        System.out.println(custCash.getQuarter());
+        System.out.println(custCash.getDollar());
+        System.out.println(custCash.getNickel());
+
+        System.out.println(cashier.getChange());
+        System.out.println(cashier.getRegAmount());
+
+        System.out.println(cashier.originalPrice);
     }
 }

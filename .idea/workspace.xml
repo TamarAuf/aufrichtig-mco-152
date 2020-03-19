@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42024eb4-f5e2-4e2c-a95b-bf704a86ad4e" name="Default Changelist" comment="" />
+    <list default="true" id="42024eb4-f5e2-4e2c-a95b-bf704a86ad4e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/aufrichtig/shapes/ShapeComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/aufrichtig/shapes/ShapesFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aufrichtig/cashier/Cashier.java" beforeDir="false" afterPath="$PROJECT_DIR$/aufrichtig/cashier/Cashier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aufrichtig/chashier/RegisterFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aufrichtig/chashier/RegisterFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aufrichtig/cashier/Cashier.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aufrichtig/cashier/Cashier.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +24,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1Yjt0oVFcvHDK1Mv8bxh55ohE8n" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -23,7 +36,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/aufrichtig" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CashierProject" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.excludes" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -43,19 +59,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="aufrichtig.cashier.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProjectileFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="aufrichtig.projectile.ProjectileFrame" />
-      <module name="aufrichtig-mco152" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="aufrichtig.projectile.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -89,6 +92,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ShapesFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="aufrichtig.shapes.ShapesFrame" />
+      <module name="aufrichtig-mco152" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aufrichtig.shapes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PayTest.pay" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="aufrichtig-mco152" />
       <extension name="coverage">
@@ -109,9 +125,9 @@
       <list>
         <item itemvalue="Application.RegisterFrame" />
         <item itemvalue="Application.Cashier" />
-        <item itemvalue="JUnit.PayTest.pay" />
-        <item itemvalue="Application.ProjectileFrame" />
+        <item itemvalue="Application.ShapesFrame" />
         <item itemvalue="Application.ScrabbleFrame" />
+        <item itemvalue="JUnit.PayTest.pay" />
       </list>
     </recent_temporary>
   </component>
@@ -149,22 +165,26 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="479" y="244" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1366.728@0.0.1366.728" timestamp="1583634556392" />
-    <state width="1286" height="163" key="GridCell.Tab.0.bottom" timestamp="1584480388923">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1584484331295">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1286" height="163" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1584480388923" />
-    <state width="1286" height="163" key="GridCell.Tab.0.center" timestamp="1584480388919">
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1584484331295" />
+    <state width="1286" height="163" key="GridCell.Tab.0.bottom" timestamp="1584572563435">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1286" height="163" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1584480388919" />
-    <state width="1286" height="163" key="GridCell.Tab.0.left" timestamp="1584480388919">
+    <state width="1286" height="163" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1584572563435" />
+    <state width="1286" height="163" key="GridCell.Tab.0.center" timestamp="1584572563435">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1286" height="163" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1584480388919" />
-    <state width="1286" height="163" key="GridCell.Tab.0.right" timestamp="1584480388923">
+    <state width="1286" height="163" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1584572563435" />
+    <state width="1286" height="163" key="GridCell.Tab.0.left" timestamp="1584572563435">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1286" height="163" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1584480388923" />
+    <state width="1286" height="163" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1584572563435" />
+    <state width="1286" height="163" key="GridCell.Tab.0.right" timestamp="1584572563435">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1286" height="163" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1584572563435" />
     <state width="1286" height="204" key="GridCell.Tab.1.bottom" timestamp="1584416456606">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -181,14 +201,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1286" height="204" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1584416456606" />
-    <state x="499" y="142" key="chooseDestDirectoryDialog" timestamp="1584369192964">
+    <state x="184" y="7" key="SettingsEditor" timestamp="1584484336887">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="499" y="142" key="chooseDestDirectoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1584369192964" />
-    <state x="384" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1584369013993">
+    <state x="184" y="7" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1584484336887" />
+    <state x="499" y="142" key="chooseDestDirectoryDialog" timestamp="1584486799825">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="384" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1584369013993" />
+    <state x="499" y="142" key="chooseDestDirectoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1584486799825" />
+    <state x="384" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1584568567210">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="384" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1584568567210" />
     <state x="339" y="164" key="run.anything.popup" timestamp="1584411386249">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
