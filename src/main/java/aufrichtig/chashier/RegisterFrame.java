@@ -180,7 +180,8 @@ public class RegisterFrame extends JFrame {
             custCash.setDime(0);
             custCash.setNickel(0);
             custCash.setPenny(0);
-            amountLabel.setText(String.valueOf(0));
+            amountPaid = 0;
+            amountLabel.setText(String.valueOf(amountPaid));
         });
 
         payButton.addActionListener(actionEvent -> {

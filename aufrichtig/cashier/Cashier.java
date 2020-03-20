@@ -51,8 +51,6 @@ public class Cashier {
     private int regNicks;
     private int regPenns;
 
-    String error;
-
     private double change = 0.0;
     private double regAmount;
 
@@ -121,11 +119,11 @@ public class Cashier {
                 moneySpent += .01;
             }
         }
-        if(moneySpent < originalPrice){
-            error = "Need more money";
+        /*if(moneySpent < originalPrice){
+            System.exit(0);
         }
-        else{
-        change = moneySpent - originalPrice;}
+        else{*/
+        change = moneySpent - originalPrice;
 
         Random rand = new Random();
 
@@ -141,13 +139,21 @@ public class Cashier {
         Cash register = new Cash();
 
         register.setTwentyDollar(regTwents);
+        regAmount += regTwents;
         register.setTenDollar(regTens);
+        regAmount += regTens;
         register.setFiveDollar(regFives);
+        regAmount += regFives;
         register.setDollar(regOnes);
+        regAmount += regOnes;
         register.setQuarter(regQuarts);
+        regAmount += regQuarts;
         register.setDime(regDimes);
+        regAmount += regDimes;
         register.setNickel(regNicks);
+        regAmount += regNicks;
         register.setPenny(regPenns);
+        regAmount += regPenns;
 
         twentsAvail = register.getTwentyDollar();
         tensAvail = register.getTenDollar();
@@ -263,9 +269,6 @@ public class Cashier {
         changeCash.setPenny(pennsChange);
 
         return changeCash;
-
-
-
     }
 
     public double getChange() {
