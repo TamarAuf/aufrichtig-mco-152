@@ -21,14 +21,14 @@ public class PayTest {
 
         Cashier cashier = new Cashier();
 
-        Cash change = new Cash();
+        Cash change;
         //when
         change = cashier.pay(1.10, custCash);
         //then
-        /*assertEquals(11, register.getDollar());
+        assertEquals(11, register.getDollar());
         assertEquals(11, register.getQuarter());
         assertEquals(9, register.getDime());
-        assertEquals(9, register.getNickel());*/
+        assertEquals(9, register.getNickel());
 
         assertEquals(1, change.getDime());
         assertEquals(1, change.getNickel());

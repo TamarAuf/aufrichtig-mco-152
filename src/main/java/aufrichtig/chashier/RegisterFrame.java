@@ -11,8 +11,6 @@ import java.util.Random;
 
 public class RegisterFrame extends JFrame {
 
-    private Cashier cashier;
-
     private JButton twentyButton;
     private JButton tenButton;
     private JButton fiveButton;

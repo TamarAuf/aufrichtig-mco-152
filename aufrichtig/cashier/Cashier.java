@@ -56,13 +56,6 @@ public class Cashier {
     private double change = 0.0;
     private double regAmount;
 
-    public double getChange() {
-        return change;
-    }
-
-    public double getRegAmount() {
-        return regAmount;
-    }
 
 
     public Cash pay(double price, Cash custCash) throws NotEnoughChangeException {
@@ -270,28 +263,16 @@ public class Cashier {
         changeCash.setPenny(pennsChange);
 
         return changeCash;
+
+
+
     }
 
-    public static void main(String[] args) throws NotEnoughChangeException {
+    public double getChange() {
+        return change;
+    }
 
-        Cash custCash = new Cash();
-        custCash.setDollar(1);
-        custCash.setQuarter(1);
-
-        Cashier cashier = new Cashier();
-
-        Cash change = new Cash();
-        //when
-        change = cashier.pay(1.10, custCash);
-
-        System.out.println(custCash.getDime());
-        System.out.println(custCash.getQuarter());
-        System.out.println(custCash.getDollar());
-        System.out.println(custCash.getNickel());
-
-        System.out.println(cashier.getChange());
-        System.out.println(cashier.getRegAmount());
-
-        System.out.println(cashier.originalPrice);
+    public double getRegAmount() {
+        return regAmount;
     }
 }
