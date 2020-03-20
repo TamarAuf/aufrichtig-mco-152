@@ -25,7 +25,7 @@ public class RegisterFrame extends JFrame {
     private JLabel priceTextLabel;
     private JLabel priceLabel;
     private JLabel amountTextLabel;
-    private JTextField amountLabel;
+    private JLabel amountLabel;
     private JButton clearButton;
     private JButton payButton;
 
@@ -81,7 +81,7 @@ public class RegisterFrame extends JFrame {
         priceTextLabel = new JLabel("Price:");
         priceLabel = new JLabel(String.valueOf(price));
         amountTextLabel = new JLabel("Amount:");
-        amountLabel = new JTextField(String.valueOf(amountPaid));
+        amountLabel = new JLabel(String.valueOf(amountPaid));
         clearButton = new JButton("Clear");
         payButton = new JButton("Pay");
 
@@ -128,41 +128,49 @@ public class RegisterFrame extends JFrame {
             newTwent += 1;
             custCash.setTwentyDollar(newTwent);
             amountPaid += 20;
+            amountLabel.setText((String.valueOf(amountPaid)));
         });
         tenButton.addActionListener(actionEvent -> {
             newTen += 1;
             custCash.setTwentyDollar(newTen);
             amountPaid += 10;
+            amountLabel.setText((String.valueOf(amountPaid)));
         });
         fiveButton.addActionListener(actionEvent -> {
             newFive += 1;
             custCash.setTenDollar(newFive);
             amountPaid += 5;
+            amountLabel.setText((String.valueOf(amountPaid)));
         });
         oneButton.addActionListener(actionEvent -> {
             newOne += 1;
             custCash.setFiveDollar(newOne);
             amountPaid += 1;
+            amountLabel.setText((String.valueOf(amountPaid)));
         });
         quarterButton.addActionListener(actionEvent -> {
             newQuart += 1;
             custCash.setQuarter(newQuart);
             amountPaid += .25;
+            amountLabel.setText((String.valueOf(amountPaid)));
         });
         dimeButton.addActionListener(actionEvent -> {
             newDime += 1;
             custCash.setDime(newDime);
             amountPaid += .1;
+            amountLabel.setText((String.valueOf(amountPaid)));
         });
         nickelButton.addActionListener(actionEvent -> {
             newNick += 1;
             custCash.setNickel(newNick);
             amountPaid += .05;
+            amountLabel.setText((String.valueOf(amountPaid)));
         });
         pennyButton.addActionListener(actionEvent -> {
             newPenn += 1;
             custCash.setPenny(newPenn);
             amountPaid += .01;
+            amountLabel.setText((String.valueOf(amountPaid)));
         });
 
         clearButton.addActionListener(actionEvent -> {
@@ -174,11 +182,14 @@ public class RegisterFrame extends JFrame {
             custCash.setDime(0);
             custCash.setNickel(0);
             custCash.setPenny(0);
+            amountLabel.setText(String.valueOf(0));
         });
 
         payButton.addActionListener(actionEvent -> {
             try {
                 cashier.pay(price, custCash);
+                registerLabel.setText(String.valueOf(cashier.getRegAmount()));
+                changeLabel.setText(String.valueOf(cashier.getChange()));
             } catch (NotEnoughChangeException e) {
                 e.printStackTrace();
             }
