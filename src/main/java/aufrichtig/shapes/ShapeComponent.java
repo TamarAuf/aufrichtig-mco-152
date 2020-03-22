@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class ShapeComponent extends JComponent {
+    private String shape;
 
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -13,16 +14,40 @@ public class ShapeComponent extends JComponent {
         int centerX = width / 2;
         int centerY = height / 2;
         g.translate(centerX, centerY);
+        switch(shape){
+        case "one": drawOne(g);
+        case "two": drawTwo(g);
+        case "three": drawThree(g);
+        case "four": drawFour(g);
+    }}
 
-        drawStar(g);
+    private void drawOne(Graphics g) {
+
     }
+    private void drawTwo(Graphics g) {
 
-    private void drawStar(Graphics g) {
-        g.drawLine(-100, -100, 0, 75);
-        g.drawLine(0, 75, 275, 275);
-        g.drawLine(275, 275, -50, 59);
-        g.drawLine(-50, 59, 275, 59);
-        g.drawLine(275, 59, -100, -100);
+    }
+    private void drawThree(Graphics g) {
+
+    }
+    private void drawFour(Graphics g) {
+
+    }
+    public void setShapeOne(){
+        shape = "one";
+        repaint();
+    }
+    public void setShapeTwo(){
+        shape = "two";
+        repaint();
+    }
+    public void setShapeThree(){
+        shape = "three";
+        repaint();
+    }
+    public void setShapeFour(){
+        shape = "four";
+        repaint();
     }
 }
 

@@ -6,7 +6,7 @@ public class ShapesFrame extends JFrame{
 
     public ShapesFrame() {
 
-        setSize(300, 400);
+        setSize(600, 800);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle("Shapes");
 
@@ -15,8 +15,12 @@ public class ShapesFrame extends JFrame{
         shapeComponent = new ShapeComponent();
         add(shapeComponent, BorderLayout.CENTER);
 
-        JButton button = new JButton();
+        JButton button = new JButton("First");
         add(button, BorderLayout.WEST);
+
+        button.addActionListener(actionEvent ->{
+            shapeComponent.setShapeOne();
+        });
     }
     public static void main(String[] args){
         new ShapesFrame().setVisible(true);
