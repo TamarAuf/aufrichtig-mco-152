@@ -21,13 +21,38 @@ public class ShapeComponent extends JComponent {
         case "four": drawFour(g);
     }}
 
-    private void drawOne(Graphics g) {
+    public void drawOne(Graphics g) {
+        g.drawLine(-280,-110,200,-110);
+        g.drawLine(200,-110,-20,50);
+        g.drawLine(-20,50,0,0);
+        g.drawLine(0,0,-80,-20);
+        g.drawLine(-80,-20,-10,-40);
+        g.drawLine(-10,-40, -200, -100);
+
+        g.drawOval(100,0,8,8);
+        g.drawLine(100,-8,100,-25);
+        g.drawLine(100,-8,105,-18);
+        g.drawLine(100,-8,95,-18);
+        g.drawLine(100,-25,110,-45);
+        g.drawLine(100,-25,110,-45);
 
     }
     private void drawTwo(Graphics g) {
+        g.drawLine(-280,-110,200,-110);
+        g.drawLine(200,-110,-20,50);
+        g.drawLine(-20,50,0,0);
+        g.drawLine(0,0,-80,-20);
+        g.drawLine(-80,-20,-10,-40);
+        g.drawLine(-10,-40, -200, -100);
 
     }
     private void drawThree(Graphics g) {
+        g.drawLine(-280,-110,200,-110);
+        g.drawLine(200,-110,-20,50);
+        g.drawLine(-20,50,0,0);
+        g.drawLine(0,0,-80,-20);
+        g.drawLine(-80,-20,-10,-40);
+        g.drawLine(-10,-40, -200, -100);
 
     }
     private void drawFour(Graphics g) {
