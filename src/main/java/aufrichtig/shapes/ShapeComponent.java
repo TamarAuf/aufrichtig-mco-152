@@ -1,10 +1,9 @@
 package aufrichtig.shapes;
-
 import javax.swing.*;
 import java.awt.*;
 
 public class ShapeComponent extends JComponent {
-    private String shape;
+    private String shape = "one";
 
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -19,7 +18,8 @@ public class ShapeComponent extends JComponent {
         case "two": drawTwo(g);
         case "three": drawThree(g);
         case "four": drawFour(g);
-    }}
+        }
+    }
 
     public void drawOne(Graphics g) {
         g.drawLine(-280,-110,200,-110);
@@ -38,12 +38,12 @@ public class ShapeComponent extends JComponent {
 
     }
     private void drawTwo(Graphics g) {
-        g.drawLine(-280,-110,200,-110);
-        g.drawLine(200,-110,-20,50);
-        g.drawLine(-20,50,0,0);
-        g.drawLine(0,0,-80,-20);
-        g.drawLine(-80,-20,-10,-40);
-        g.drawLine(-10,-40, -200, -100);
+        g.drawLine(-210,110,200,110);
+        g.drawLine(200,110,-20,-50);
+        g.drawLine(-20,-50,0,0);
+        g.drawLine(0,0,-80,20);
+        g.drawLine(-80,20,-10,40);
+        g.drawLine(-10,40, -200, 100);
 
     }
     private void drawThree(Graphics g) {
