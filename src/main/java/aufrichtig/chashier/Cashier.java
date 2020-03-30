@@ -1,7 +1,5 @@
 package aufrichtig.cashier;
 
-import aufrichtig.chashier.RegisterFrame;
-
 import java.util.Random;
 
 /**
@@ -51,10 +49,12 @@ public class Cashier {
     private int regNicks;
     private int regPenns;
 
-    private double change = 0.0;
+    private double changeMess;
+    private double change1;
+    private int change2;
+    private double change;
+    private double changeCalc;
     private double regAmount;
-
-
 
     public Cash pay(double price, Cash custCash) throws NotEnoughChangeException {
 
@@ -69,51 +69,51 @@ public class Cashier {
         pennsLeft = custCash.getPenny();
 
         int count = 0;
-        while (price >= .01 || count == 2) {
+        while (price >= .01) {
             count += 1;
-            while ((price >= 20 || count > 1) && twentsLeft > 0) {
+            while ((price >= 20 || count > 1) && twentsLeft > 0 && price > 0) {
                 price -= 20;
                 twentsLeft -= 1;
                 moneySpent += 20;
             }
 
-            while ((price >= 10 || count > 1) && tensLeft > 0) {
+            while ((price >= 10 || count > 1) && tensLeft > 0 && price > 0) {
                 price -= 10;
                 tensLeft -= 1;
                 moneySpent += 10;
             }
 
-            while ((price >= 5 || count > 1) && fivesLeft > 0) {
+            while ((price >= 5 || count > 1) && fivesLeft > 0 && price > 0) {
                 price -= 5;
                 fivesLeft -= 1;
                 moneySpent += 5;
             }
 
-            while ((price >= 1 || count > 1) && onesLeft > 0) {
+            while ((price >= 1 || count > 1) && onesLeft > 0 && price > 0) {
                 price -= 1;
                 onesLeft -= 1;
                 moneySpent += 1;
             }
 
-            while ((price >= .25 || count > 1) && quartsLeft > 0) {
+            while ((price >= .25 || count > 1) && quartsLeft > 0 && price > 0) {
                 price -= .25;
                 quartsLeft -= 1;
                 moneySpent += .25;
             }
 
-            while ((price >= .1 || count > 1) && dimesLeft > 0) {
+            while ((price >= .1 || count > 1) && dimesLeft > 0 && price > 0) {
                 price -= .1;
                 dimesLeft -= 1;
                 moneySpent += .1;
             }
 
-            while ((price >= .05 || count > 1) && nicksLeft > 0) {
+            while ((price >= .05 || count > 1) && nicksLeft > 0 && price > 0) {
                 price -= .05;
                 nicksLeft -= 1;
                 moneySpent += .05;
             }
 
-            while ((price >= .01 || count > 1) && pennsLeft > 0) {
+            while ((price >= .01 || count > 1) && pennsLeft > 0 && price > 0) {
                 price -= .01;
                 pennsLeft -= 1;
                 moneySpent += .01;
@@ -123,7 +123,10 @@ public class Cashier {
             System.exit(0);
         }
         else{*/
-        change = moneySpent - originalPrice;
+        changeCalc = changeMess = moneySpent - originalPrice;
+        change1 = changeMess * 100;
+        change2 = (int)change1;
+        change = (double)change2/100;
 
         Random rand = new Random();
 
@@ -139,21 +142,13 @@ public class Cashier {
         Cash register = new Cash();
 
         register.setTwentyDollar(regTwents);
-        regAmount += regTwents;
         register.setTenDollar(regTens);
-        regAmount += regTens;
         register.setFiveDollar(regFives);
-        regAmount += regFives;
         register.setDollar(regOnes);
-        regAmount += regOnes;
         register.setQuarter(regQuarts);
-        regAmount += regQuarts;
         register.setDime(regDimes);
-        regAmount += regDimes;
         register.setNickel(regNicks);
-        regAmount += regNicks;
         register.setPenny(regPenns);
-        regAmount += regPenns;
 
         twentsAvail = register.getTwentyDollar();
         tensAvail = register.getTenDollar();
@@ -164,7 +159,7 @@ public class Cashier {
         nicksAvail = register.getNickel();
         pennsAvail = register.getPenny();
 
-        regAmount += 20 * twentsAvail;
+        regAmount = 20 * twentsAvail;
         regAmount += 10 * tensAvail;
         regAmount += 5 * fivesAvail;
         regAmount += onesAvail;
@@ -173,57 +168,57 @@ public class Cashier {
         regAmount += .05 * nicksAvail;
         regAmount += .01 * pennsAvail;
 
-        while (change >= 20 && twentsAvail > 0) {
-            change -= 20;
+        while (changeCalc >= 20 && twentsAvail > 0) {
+            changeCalc -= 20;
             twentsAvail -= 1;
             twentsChange += 1;
         }
 
-        while (change >= 10 && tensAvail > 0) {
-            change -= 10;
+        while (changeCalc >= 10 && tensAvail > 0) {
+            changeCalc -= 10;
             tensAvail -= 1;
             tensChange += 1;
         }
 
-        while (change >= 5 && fivesAvail > 0) {
-            change -= 5;
+        while (changeCalc >= 5 && fivesAvail > 0) {
+            changeCalc -= 5;
             fivesAvail -= 1;
             fivesChange += 1;
         }
 
-        while (change >= 1 && onesAvail > 0) {
-            change -= 1;
+        while (changeCalc >= 1 && onesAvail > 0) {
+            changeCalc -= 1;
             onesAvail -= 1;
             onesChange += 1;
         }
 
-        while (change >= .25 && quartsAvail > 0) {
-            change -= .25;
+        while (changeCalc >= .25 && quartsAvail > 0) {
+            changeCalc -= .25;
             quartsAvail -= 1;
             quartsChange += 1;
         }
 
-        while (change >= .1 && dimesAvail > 0) {
-            change -= .1;
+        while (changeCalc >= .1 && dimesAvail > 0) {
+            changeCalc -= .1;
             dimesAvail -= 1;
             dimesChange += 1;
         }
 
-        while (change >= .05 && nicksAvail > 0) {
-            change -= .05;
+        while (changeCalc >= .05 && nicksAvail > 0) {
+            changeCalc -= .05;
             nicksAvail -= 1;
             nicksChange += 1;
         }
 
-        while (change >= .01 && pennsAvail > 0) {
-            change -= .01;
+        while (changeCalc >= .01 && pennsAvail > 0) {
+            changeCalc -= .01;
             pennsAvail -= 1;
             pennsChange += 1;
         }
 
         try {
-            if (change >= .01) {
-                System.out.println("Not Enough Change");
+            if (changeCalc >= .01) {
+                change = -1;
                 ;
             } else {
                 register.setTwentyDollar(twentsAvail - twentsChange);
@@ -248,7 +243,7 @@ public class Cashier {
         nicksAvail = register.getNickel();
         pennsAvail = register.getPenny();
 
-        regAmount += 20 * twentsAvail;
+        regAmount = 20 * twentsAvail;
         regAmount += 10 * tensAvail;
         regAmount += 5 * fivesAvail;
         regAmount += onesAvail;
