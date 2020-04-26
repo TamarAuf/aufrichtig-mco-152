@@ -1,4 +1,4 @@
-package aufrichtig.cashier;
+package aufrichtig.chashier;
 
 import java.util.Random;
 

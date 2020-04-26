@@ -1,12 +1,15 @@
-package aufrichtig.cashier;
+package aufrichtig.chashier;
 
+import aufrichtig.chashier.Cash;
+import aufrichtig.chashier.Cashier;
+import aufrichtig.chashier.NotEnoughChangeException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PayTest {
     @Test
-    public void pay() throws NotEnoughChangeException{
+    public void pay() throws NotEnoughChangeException {
         //given
         Cash custCash = new Cash();
         custCash.setDollar(1);

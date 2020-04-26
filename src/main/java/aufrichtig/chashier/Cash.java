@@ -1,4 +1,4 @@
-package aufrichtig.cashier;
+package aufrichtig.chashier;
 
 /**
  *
@@ -14,7 +14,7 @@ public class Cash {
     private int nickel;
     private int penny;
 
-    public Cash() throws NotEnoughChangeException{
+    public Cash() throws NotEnoughChangeException {
         if(twentyDollar < 0 || tenDollar < 0 || fiveDollar < 0 || dollar < 0
                 || quarter < 0 || dime < 0 || nickel < 0 || penny < 0) {
             throw new NotEnoughChangeException();

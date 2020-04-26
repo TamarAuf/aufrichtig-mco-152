@@ -1,12 +1,7 @@
 package aufrichtig.chashier;
 
-import aufrichtig.cashier.Cashier;
-import aufrichtig.cashier.Cash;
-import aufrichtig.cashier.NotEnoughChangeException;
-
 import javax.swing.*;
 import java.awt.*;
-import java.io.FileNotFoundException;
 import java.util.Random;
 
 public class RegisterFrame extends JFrame {

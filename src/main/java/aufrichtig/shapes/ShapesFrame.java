@@ -13,7 +13,7 @@ public class ShapesFrame extends JFrame{
 
     public ShapesFrame() {
 
-        setSize(600, 800);
+        setSize(800, 800);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle("Shapes");
 
