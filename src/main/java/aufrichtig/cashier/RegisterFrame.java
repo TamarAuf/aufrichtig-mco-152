@@ -30,8 +30,6 @@ public class RegisterFrame extends JFrame {
     private JPanel topPanel;
     private JPanel middlePanel;
     private JPanel bottomPanel;
-
-    private JLabel errors;
     
     private int newTwent;
     private int newTen;
@@ -79,7 +77,7 @@ public class RegisterFrame extends JFrame {
         payButton = new JButton("Pay");
 
         registerTextLabel = new JLabel("Register:");
-        registerLabel = new JLabel(String.valueOf(cashier.getRegAmount()));
+        registerLabel = new JLabel(String.valueOf(cashier.getRegFinal()));
         changeTextLabel = new JLabel("Change:");
         changeLabel = new JLabel(String.valueOf(cashier.getChange()));
 
@@ -177,12 +175,13 @@ public class RegisterFrame extends JFrame {
             custCash.setPenny(0);
             amountPaid = 0;
             amountLabel.setText(String.valueOf(amountPaid));
+            changeLabel.setText("");
         });
 
         payButton.addActionListener(actionEvent -> {
             try {
                 cashier.pay(price, custCash);
-                registerLabel.setText(String.valueOf(cashier.getRegAmount()));
+                registerLabel.setText(String.valueOf(cashier.getRegFinal()));
                 changeLabel.setText(String.valueOf(cashier.getChange()));
             } catch (NotEnoughChangeException e) {
                 e.printStackTrace();

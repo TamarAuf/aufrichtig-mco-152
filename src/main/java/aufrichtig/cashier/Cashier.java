@@ -1,6 +1,7 @@
 package aufrichtig.chashier;
 
 import java.util.Random;
+import java.lang.Math;
 
 /**
  * @author Tamar Aufrichtig
@@ -49,12 +50,12 @@ public class Cashier {
     private int regNicks;
     private int regPenns;
 
-    private double changeMess;
-    private double change1;
-    private int change2;
     private double change;
     private double changeCalc;
     private double regAmount;
+    private double reg1;
+    private int reg2;
+    private double regFinal;
 
     public Cash pay(double price, Cash custCash) throws NotEnoughChangeException {
 
@@ -69,7 +70,7 @@ public class Cashier {
         pennsLeft = custCash.getPenny();
 
         int count = 0;
-        while (price >= .01) {
+        while (price >= .01 && count < 5){
             count += 1;
             while ((price >= 20 || count > 1) && twentsLeft > 0 && price > 0) {
                 price -= 20;
@@ -119,25 +120,23 @@ public class Cashier {
                 moneySpent += .01;
             }
         }
-        /*if(moneySpent < originalPrice){
-            System.exit(0);
+        if(price > .01){
+            throw new NotEnoughChangeException();
         }
-        else{*/
-        changeCalc = changeMess = moneySpent - originalPrice;
-        change1 = changeMess * 100;
-        change2 = (int)change1;
-        change = (double)change2/100;
+        else{
+        change = 0;
+        change = changeCalc = Math.abs(price);
 
         Random rand = new Random();
 
-        regTwents = rand.nextInt(100);
-        regTens = rand.nextInt(100);
-        regFives = rand.nextInt(100);
-        regOnes = rand.nextInt(100);
-        regQuarts = rand.nextInt(100);
-        regDimes = rand.nextInt(100);
-        regNicks = rand.nextInt(100);
-        regPenns = rand.nextInt(100);
+        regTwents = rand.nextInt(10);
+        regTens = rand.nextInt(10);
+        regFives = rand.nextInt(10);
+        regOnes = rand.nextInt(10);
+        regQuarts = rand.nextInt(10);
+        regDimes = rand.nextInt(10);
+        regNicks = rand.nextInt(10);
+        regPenns = rand.nextInt(10);
 
         Cash register = new Cash();
 
@@ -167,6 +166,10 @@ public class Cashier {
         regAmount += .1 * dimesAvail;
         regAmount += .05 * nicksAvail;
         regAmount += .01 * pennsAvail;
+
+        reg1 = regAmount * 100;
+        reg2 = (int)reg1;
+        regFinal = (double)reg2/100;
 
         while (changeCalc >= 20 && twentsAvail > 0) {
             changeCalc -= 20;
@@ -218,8 +221,7 @@ public class Cashier {
 
         try {
             if (changeCalc >= .01) {
-                change = -1;
-                ;
+                changeCalc = -1;
             } else {
                 register.setTwentyDollar(twentsAvail - twentsChange);
                 register.setTenDollar(tensAvail - tensChange);
@@ -264,13 +266,13 @@ public class Cashier {
         changeCash.setPenny(pennsChange);
 
         return changeCash;
-    }
+    }}
 
     public double getChange() {
         return change;
     }
 
-    public double getRegAmount() {
-        return regAmount;
+    public double getRegFinal() {
+        return regFinal;
     }
 }
